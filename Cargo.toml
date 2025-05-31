@@ -1,0 +1,17 @@
+[package]
+name = "api-shooter-cli"
+version = "0.1.0"
+edition = "2021"
+description = "A fun action game to learn REST API concepts through real-time shooting gameplay"
+license = "MIT"
+repository = "https://github.com/your-username/api-shooter-cli"
+keywords = ["game", "action", "rest", "api", "educational"]
+categories = ["games"]
+
+[[bin]]
+name = "api-shooter"
+path = "src/main.rs"
+
+[dependencies]
+rand = "0.8"
+macroquad = "0.4"
