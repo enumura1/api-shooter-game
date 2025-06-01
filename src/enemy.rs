@@ -18,7 +18,7 @@ impl Enemy {
     pub fn new() -> Self {
         let mut rng = thread_rng();
         let enemy_types = vec!["User", "Order", "Product", "Payment"];
-        let weaknesses = vec!["GET", "POST", "PUT"];
+        let weaknesses = vec!["POST", "PUT", "DELETE"];
 
         let enemy_type = enemy_types[rng.gen_range(0..enemy_types.len())];
         let id = rng.gen_range(100..999);
@@ -122,7 +122,7 @@ mod tests {
 
     #[test]
     fn test_weakness_coverage() {
-        let weaknesses = ["GET", "POST", "PUT"];
+        let weaknesses = ["POST", "PUT", "DELETE"];
 
         // Test that all weakness types can be generated
         let mut found_weaknesses = std::collections::HashSet::new();
