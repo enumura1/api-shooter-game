@@ -1,4 +1,4 @@
-# API Shooter
+# API Shooter Game
 
 A simple action game where you shoot enemies using HTTP methods. Built with Rust.
 
