@@ -2,6 +2,14 @@
 
 A simple action game where you shoot enemies using HTTP methods. Built with Rust.
 
+# Screenshots
+
+<p align="center">
+  <img src="screenshot.webp" alt="API Shooter Gameplay" width="600">
+  <br>
+  <em>Main gameplay - scan enemies and attack with HTTP methods</em>
+</p>
+
 ## What is this?
 
 Shoot enemies with GET, POST, PUT, DELETE attacks. Each enemy has a weakness to a specific HTTP method - find it and exploit it for critical damage.
