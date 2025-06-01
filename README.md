@@ -41,9 +41,8 @@ cargo run
 
 ## Dependencies
 
-- [Rust](https://www.rust-lang.org/)
-- [macroquad](https://macroquad.rs/)  
-- [rand](https://crates.io/crates/rand) 
+- [macroquad](https://macroquad.rs/) (MIT/Apache-2.0) 
+- [rand](https://crates.io/crates/rand) (MIT/Apache-2.0)
 
 ## License
 
