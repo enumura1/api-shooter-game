@@ -1,5 +1,5 @@
 [package]
-name = "api-shooter-cli"
+name = "api-shooter-game"
 version = "0.1.0"
 edition = "2021"
 description = "A fun action game to learn REST API concepts"
