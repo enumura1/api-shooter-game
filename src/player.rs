@@ -28,3 +28,32 @@ impl Player {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_player_creation() {
+        let player = Player::new();
+        assert_eq!(player.hp, 100);
+        assert_eq!(player.max_hp, 100);
+        assert_eq!(player.get_ammo, 99);
+        assert_eq!(player.post_ammo, 20);
+        assert_eq!(player.put_ammo, 20);
+        assert_eq!(player.delete_ammo, 3);
+        assert_eq!(player.x, 400.0);
+        assert_eq!(player.y, 500.0);
+    }
+
+    #[test]
+    fn test_player_initial_position() {
+        let player = Player::new();
+
+        // Should be in center-bottom area
+        assert_eq!(player.x, 400.0); // Center of 800px width
+        assert_eq!(player.y, 500.0); // Near bottom of 600px height
+        assert_eq!(player.size, 30.0);
+        assert_eq!(player.speed, 300.0);
+    }
+}
