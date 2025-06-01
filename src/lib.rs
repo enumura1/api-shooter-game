@@ -1,12 +1,12 @@
-pub mod bullet;
-pub mod enemy;
-pub mod game_state;
 pub mod player;
+pub mod enemy;
+pub mod bullet;
+pub mod game_state;
 
-pub use bullet::{Bullet, EnemyBullet};
-pub use enemy::Enemy;
-pub use game_state::GameState;
 pub use player::Player;
+pub use enemy::Enemy;
+pub use bullet::{Bullet, EnemyBullet};
+pub use game_state::GameState;
 
 #[cfg(test)]
 mod integration_tests {
@@ -30,7 +30,7 @@ mod integration_tests {
         let player = Player::new();
         let enemy = Enemy::new();
         let game = GameState::new();
-
+        
         // Ensure all components can be created
         assert!(player.hp > 0);
         assert!(enemy.hp > 0);

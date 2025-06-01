@@ -17,6 +17,7 @@ pub struct EnemyBullet {
     pub speed: f32,
     pub damage: i32,
     pub attack_name: String,
+    pub color: Color,
 }
 
 #[cfg(test)]
@@ -49,6 +50,7 @@ mod tests {
             speed: 250.0,
             damage: 20,
             attack_name: "404 Not Found".to_string(),
+            color: ORANGE,
         };
 
         assert_eq!(enemy_bullet.x, 300.0);
@@ -59,7 +61,7 @@ mod tests {
     #[test]
     fn test_bullet_types() {
         let http_methods = ["GET", "POST", "PUT", "DELETE"];
-
+        
         for method in &http_methods {
             let bullet = Bullet {
                 x: 0.0,
@@ -69,7 +71,7 @@ mod tests {
                 damage: 10,
                 color: WHITE,
             };
-
+            
             assert_eq!(bullet.bullet_type, *method);
             assert!(bullet.speed > 0.0);
         }
@@ -79,12 +81,12 @@ mod tests {
     fn test_http_error_attacks() {
         let error_codes = [
             "400 Bad Request",
-            "401 Unauthorized",
+            "401 Unauthorized", 
             "403 Forbidden",
             "429 Too Many Requests",
-            "500 Internal Server Error",
+            "500 Internal Server Error"
         ];
-
+        
         for error in &error_codes {
             let enemy_bullet = EnemyBullet {
                 x: 0.0,
@@ -92,8 +94,9 @@ mod tests {
                 speed: 250.0,
                 damage: 20,
                 attack_name: error.to_string(),
+                color: ORANGE,
             };
-
+            
             assert_eq!(enemy_bullet.attack_name, *error);
             assert!(enemy_bullet.attack_name.len() > 10);
             assert!(enemy_bullet.damage > 0);

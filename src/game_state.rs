@@ -178,14 +178,18 @@ impl GameState {
         if let Some(ref enemy) = self.enemy {
             let mut rng = thread_rng();
             let attacks = vec![
-                ("400 Bad Request", 15),
-                ("401 Unauthorized", 20),
-                ("403 Forbidden", 25),
-                ("429 Too Many Requests", 30),
-                ("500 Internal Server Error", 35),
+                ("400 Bad Request", 15, Color::new(1.0, 1.0, 0.0, 1.0)),
+                ("401 Unauthorized", 20, Color::new(1.0, 0.0, 0.0, 1.0)),
+                ("403 Forbidden", 25, Color::new(0.8, 0.0, 0.0, 1.0)),
+                ("429 Too Many Requests", 30, Color::new(0.5, 0.0, 1.0, 1.0)),
+                (
+                    "500 Internal Server Error",
+                    35,
+                    Color::new(0.2, 0.2, 0.2, 1.0),
+                ),
             ];
 
-            let (attack_name, damage) = &attacks[rng.gen_range(0..attacks.len())];
+            let (attack_name, damage, color) = &attacks[rng.gen_range(0..attacks.len())];
 
             self.enemy_bullets.push(EnemyBullet {
                 x: enemy.x,
@@ -193,6 +197,7 @@ impl GameState {
                 speed: 250.0,
                 damage: *damage,
                 attack_name: attack_name.to_string(),
+                color: *color,
             });
         }
     }
@@ -335,8 +340,8 @@ impl GameState {
         }
 
         for bullet in &self.enemy_bullets {
-            draw_circle(bullet.x, bullet.y, 8.0, ORANGE);
-            draw_circle(bullet.x, bullet.y, 4.0, YELLOW);
+            draw_circle(bullet.x, bullet.y, 8.0, bullet.color);
+            draw_circle(bullet.x, bullet.y, 4.0, Color::new(1.0, 1.0, 1.0, 0.8));
         }
 
         self.draw_modern_ui();
