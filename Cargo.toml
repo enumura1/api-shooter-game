@@ -2,13 +2,13 @@
 name = "api-shooter-game"
 version = "0.1.0"
 edition = "2021"
-description = "A fun action game to learn REST API concepts"
+description = "Shooting game with REST API concepts"
 license = "MIT"
-keywords = ["game", "action", "rest", "api", "educational"]
+keywords = ["game"]
 categories = ["games"]
 
 [lib]
-name = "api_shooter_cli"
+name = "api_shooter_game"
 path = "src/lib.rs"
 
 [[bin]]

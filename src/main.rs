@@ -1,4 +1,4 @@
-use api_shooter_cli::GameState;
+use api_shooter_game::GameState;
 use macroquad::prelude::*;
 
 #[macroquad::main("API Shooter")]
